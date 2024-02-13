@@ -11,8 +11,13 @@
   "dependencies": {
     "@mui/icons-material": "^5.15.10",
     "@uiw/react-codemirror": "^4.21.21",
+    "ace-builds": "^1.32.6",
+    "all": "^0.0.0",
+    "codemirror": "^6.0.1",
     "next": "14.1.0",
     "react": "^18",
+    "react-ace": "^10.1.0",
+    "react-codemirror": "^1.0.0",
     "react-codemirror2": "^7.3.0",
     "react-dom": "^18",
     "react-icons": "^5.0.1"
@@ -22,9 +27,11 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "css-loader": "^6.10.0",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "postcss": "^8",
+    "style-loader": "^3.3.4",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

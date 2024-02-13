@@ -1,5 +1,8 @@
-import Code from "./code";
+import {Code} from "@/app/components/code";
 import Header from "./header"
+import dynamic from 'next/dynamic';
+
+
 
 
 const HomePage = () => {
@@ -7,6 +10,7 @@ const HomePage = () => {
     <>
     <Header />
     <Code />
+
     </>
     
   );
