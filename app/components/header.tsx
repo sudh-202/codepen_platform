@@ -6,13 +6,13 @@ const Header = () => {
           href="https://flowbite.com/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img
+          {/* <img
             src="../assets/codepen_icon.svg"
             className="h-8 bg-white"
             alt="Flowbite Logo"
-          />
+          /> */}
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-            CodePen
+            HTMLDECK
           </span>
         </a>
         <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse  gap-6">
