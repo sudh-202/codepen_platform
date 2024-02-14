@@ -21,21 +21,21 @@ const Code = () => {
                 value={html}
                 onChange={setHtml}
                 icon='/'
-                color='#FF3C41'
+                color= 'white'
             />
             <Editor 
                 span="CSS"
                 value={css}
                 onChange={setCss}
                 icon='*'
-                color='#0EBEFF'
+                color='white'
             />
             <Editor 
                 span="JS"
                 value={js}
                 onChange={setJs}
-                icon='( )'
-                color='#FCD000'
+                icon='()'
+                color='white'
             />
         </div>
     );
