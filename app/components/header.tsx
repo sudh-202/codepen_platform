@@ -16,7 +16,7 @@ const Header = () => {
           </span>
         </a>
         <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse  gap-6">
-          <button
+          {/* <button
             type="button"
             className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
             id="user-menu-button"
@@ -30,7 +30,7 @@ const Header = () => {
               src="/docs/images/people/profile-picture-3.jpg"
               alt="user photo"
             />
-          </button>
+          </button> */}
 
           <div
             className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
