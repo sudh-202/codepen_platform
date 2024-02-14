@@ -1,78 +1,51 @@
 "use client";
-import React, { Dispatch, SetStateAction, createContext, useContext, useState } from "react";
-import Editor from "./editor";
+import { useContext } from 'react';
 
-// Define the DataContextType interface
-interface DataContextType {
-    html: string;
-    setHtml: Dispatch<SetStateAction<string>>;
-    css: string;
-    setCss: Dispatch<SetStateAction<string>>;
-    js: string;
-    setJs: Dispatch<SetStateAction<string>>;
-}
+//components
+import Editor from './editor';
 
-// Create the DataContext
-const DataContext = createContext<DataContextType | null>(null);
 
-// Define the DataProvider component
-const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [html, setHtml] = useState<string>("");
-    const [js, setJs] = useState<string>("");
-    const [css, setCss] = useState<string>("");
+
+import { DataContext } from '../context/DataProvider';
+
+// const Container = styled(Box)`
+//     background-color: #060606;
+//     height: 50vh;
+//     display: flex;
+// `
+
+const Code = () => {
+
+    const { html, css, js, setHtml, setCss, setJs } = useContext(DataContext);
 
     return (
-        <DataContext.Provider
-            value={{
-                html,
-                setHtml,
-                css,
-                setCss,
-                js,
-                setJs,
-            }}
-        >
-            {children}
-        </DataContext.Provider>
-    );
-};
-
-// Define the Code component
-const Code: React.FC = () => {
-    // Use the useContext hook to access context values
-    const context = useContext(DataContext);
-
-    // Check if context exists and destructure its properties
-    const { html, css, js, setHtml, setCss, setJs } = context || {};
-
-    return (
-        <div className="flex">
-            {/* Render Editor for HTML */}
-            <Editor
+        <div className='flex '>
+            <Editor 
+                // language="xml"
                 span="HTML"
-                icon="/"
-                color="#FF5F56"
-                value={html || ''}
-                onChange={setHtml || (() => {})}
+                value={html}
+                onChange={setHtml}
+                icon='/'
+                color='#FF3C41'
             />
-            {/* Render Editor for CSS */}
-            <Editor
+            <Editor 
+                // language="css"
                 span="CSS"
-                icon="*"
-                color="#0EBEFF"
-                value={css || ''}
-                onChange={setCss || (() => {})}
+                value={css}
+                onChange={setCss}
+                icon='*'
+                color='#0EBEFF'
             />
-            {/* Render Editor for JS */}
-            <Editor
+            <Editor 
+                // language="javascript"="JS"
                 span="JS"
-                icon="()"
-                color="#FF5F56"
-                value={js || ''}
-                onChange={setJs || (() => {})}
+                value={js}
+                onChange={setJs}
+                icon='( )'
+                color='#FCD000'
             />
         </div>
-    );
+    )
 }
 
-export { DataContext, DataProvider, Code };
+export default Code;
