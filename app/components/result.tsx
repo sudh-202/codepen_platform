@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect, useContext } from "react";
 import { DataContext } from "@/app/context/DataProvider";
-import style from "styled-jsx/style";
 
 
 
@@ -32,7 +31,7 @@ const Result = () => {
 
   return (
     
-    <main className="h-1/2">
+    <main className="h-full">
        
       <iframe className=""
         srcDoc={src}

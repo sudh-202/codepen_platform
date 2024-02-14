@@ -22,7 +22,7 @@ const Editor: React.FC<EditorProps> = ({span, icon, color, value, onChange}) => 
     }
   }
   return (
-    <div className="grow px-3 pb-3 cursor-pointer bg-black z-1"  style={open ? null : {flexGrow: 0}}>
+    <div className={`grow px-3 pb-3 cursor-pointer bg-black z-1 ${open ? '' : 'flex-grow-0'}`}>
       <div className="flex flex-row bg-white text-[#AAAEBC] justify-between font-bold border-y-2 ">
          {span && (
         <div className="bg-[#E8E8E8] text-black flex p-4 flex-row">

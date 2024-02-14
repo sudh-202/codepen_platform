@@ -1,27 +1,22 @@
 "use client";
 import { useContext } from 'react';
-
-//components
 import Editor from './editor';
-
-
-
 import { DataContext } from '../context/DataProvider';
 
-// const Container = styled(Box)`
-//     background-color: #060606;
-//     height: 50vh;
-//     display: flex;
-// `
-
 const Code = () => {
+    const context = useContext(DataContext);
 
-    const { html, css, js, setHtml, setCss, setJs } = useContext(DataContext);
+    // Perform null check to ensure context is not null
+    if (!context) {
+        return null; // or return a loading indicator
+    }
+
+    // Assert context as DataContextType to avoid TypeScript errors
+    const { html, css, js, setHtml, setCss, setJs } = context 
 
     return (
         <div className='flex '>
             <Editor 
-                // language="xml"
                 span="HTML"
                 value={html}
                 onChange={setHtml}
@@ -29,7 +24,6 @@ const Code = () => {
                 color='#FF3C41'
             />
             <Editor 
-                // language="css"
                 span="CSS"
                 value={css}
                 onChange={setCss}
@@ -37,7 +31,6 @@ const Code = () => {
                 color='#0EBEFF'
             />
             <Editor 
-                // language="javascript"="JS"
                 span="JS"
                 value={js}
                 onChange={setJs}
@@ -45,7 +38,9 @@ const Code = () => {
                 color='#FCD000'
             />
         </div>
-    )
-}
+    );
+};
 
 export default Code;
+
+
